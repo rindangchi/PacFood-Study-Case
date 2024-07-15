@@ -73,17 +73,24 @@ In this section, table names will be identified based on the business model that
 | user | To store detailed information about users who use Pacman service|
 | driver | Tostore detailed information about driver who partnered with PacFood | 
 
+
 - Identify tables based on features and limitations
-  - Restaurant, userm and drivers only domicile in Indonesia --> need to create validation table to store data about cities in Indonesia
-  - Drivers can update their coordinates --> need to create table that can store coordinate logs
-  - Each restaurant has at least one menu --> need to create table that store menu data
+  - Restaurant, user and drivers only domicile in Indonesia --> need a validation table to store data about cities in Indonesia
+  - Drivers can update their coordinates --> need a table that can store coordinate logs
+  - Each restaurant has at least one menu --> need a table that store menu data
+  - Users enable to place orders from restaurant --> need a table to store order information
+  - User enable to place several menus in one order, but only from one restaurant --> need a table to store order detail with menu and restaurant information
+  - Every status change will be logged in the system --> need a table to store order status information
 
 | Table Name  | Description   |
 | ------------- | ------------- |
-| city | To store name of city in Indonesia|
 | driver_coordinate | To store logs of driver coordinate position|
 | food | To store food data sold by restaurants | 
-  
+| city | To store name of cities in Indonesia | 
+| orders | To store information about order placed by user, including order status and driver |
+| order_details | To store information about order details, such as food, menu ordered| 
+| order_status | To store order status  | 
+| order_status_log | To store order status change| 
 
 
 
