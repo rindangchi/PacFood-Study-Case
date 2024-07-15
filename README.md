@@ -80,7 +80,7 @@ In this section, table names will be identified based on the business model that
   - Each restaurant has at least one menu --> need a table that store menu data
   - Users enable to place orders from restaurant --> need a table to store order information
   - User enable to place several menus in one order, but only from one restaurant --> need a table to store order detail with menu and restaurant information
-  - Every status change will be logged in the system --> need a table to store order status information
+  - Every status change will be logged in the system --> need a table to store change status log
 
 | Table Name  | Description   |
 | ------------- | ------------- |
