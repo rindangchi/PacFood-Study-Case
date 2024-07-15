@@ -71,7 +71,7 @@ In this section, table names will be identified based on the business model that
 | ------------- | ------------- |
 | restaurant| To store detailed information about restaurant that partnered with PacFood | 
 | user | To store detailed information about users who use Pacman service|
-| driver | Tostore detailed information about driver who partnered with PacFood | 
+| driver | To store detailed information about driver who partnered with PacFood | 
 
 
 - Identify tables based on features and limitations
