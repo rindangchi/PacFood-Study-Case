@@ -14,8 +14,7 @@ PacFood is food delivery service in Indonesia which partners with many restauran
 
 ## Objective 
 - Design relational database for PacFood
-- Create dummy data to validate the database design
-  To validate the database design using dummy data below actions will be performed:
+- Create dummy data to validate the database design. To validate the database design using dummy data below actions will be performed:
   - Text search review
   - Display restaurant based on particular menus
   - Display 5 nearest retaurant based on user's location
