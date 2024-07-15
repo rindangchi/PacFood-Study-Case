@@ -40,6 +40,12 @@ PacFood is food delivery service in Indonesia which partners with many restauran
 - Order has five status: Confirmed, Processed, Delivering, Delivered, Cancelled
 - Every status change will be logged in the system
 
+### Driver
+- Pacfood has partnered with several drivers
+- Each Pacfood driver should have da valid driver license
+- Drivers should complete their vehicle details
+- Drivers are able to update its current location
+
   
 
 
