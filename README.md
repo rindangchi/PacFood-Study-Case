@@ -47,6 +47,34 @@ PacFood is food delivery service in Indonesia which partners with many restauran
 - Drivers should complete their vehicle details
 - Drivers are able to update its current location
 
-  
+
+# Design Process
+
+## Mission Statement
+
+Based om the Pacfood business overview and business model that has been described in section "Case Desciprtion", the mission statements of PacFood Delivery are described below:
+
+- To provide a platform that connects restaurants and customers
+- To help restaurants get more customers and revenues
+- To make people easier to order food via online
+- To organize drivers who responsible to deliver foods for customers
+
+### Creating Table Structure
+
+#### Identify Table Name
+
+In this section, table names will be identified based on the business model that has been described before.
+
+- Identify tables based on actor involved in the businesss:
+
+| Table Name  | Description   |
+| ------------- | ------------- |
+| Restaurant| To store detailed information about restaurant that partnered with PacFood | 
+| User | To store detailed information about users who use Pacman service|
+| Driver | Tostore detailed information about driver who partnered with PacFood | 
+
+
+
+
 
 
