@@ -20,8 +20,26 @@ PacFood is food delivery service in Indonesia which partners with many restauran
   - Display 5 nearest retaurant based on user's location
   - Rank restaurants based on order numbers
 
+## Features and Limitations
+### Restaurant
+- Each restaurant has different menus
+- Each restaurant should complete its address details
+- Each restaurant should have at least one menu
 
-    
+### Customer
+- Customers should complete their address details
+- Each Customer can only has one address
+- Customers can place their orders from nearby restaurant
+- Customers can order multiple menus in one order
+- A single order can only be placed from one restaurant
+
+### Order
+- Customers can write review about their orders
+- Customer can give like or dislike with their orders
+- Payment method is only via cash
+- Order has five status: Confirmed, Processed, Delivering, Delivered, Cancelled
+- Every status change will be logged in the system
+
   
 
 
