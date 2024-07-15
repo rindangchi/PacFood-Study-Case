@@ -28,7 +28,7 @@ PacFood is food delivery service in Indonesia which partners with many restauran
 
 ### Customer
 - Customers should complete their address details
-- Each Customer can only has one address
+- Each Customer can only have one address
 - Customers can place their orders from nearby restaurant
 - Customers can order multiple menus in one order
 - A single order can only be placed from one restaurant
