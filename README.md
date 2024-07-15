@@ -1,5 +1,4 @@
-# PacFood-Study-Case
-PacFood Study Case
+# Case Description
 
 ## PacFood Business Overview
 
