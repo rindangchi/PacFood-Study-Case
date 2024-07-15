@@ -1,10 +1,12 @@
 # PacFood-Study-Case
 PacFood Study Case
 
-##PacFood Business Overview
+## PacFood Business Overview
+
 PacFood is food delivery service in Indonesia which partners with many restaurants in Indonesia. PacFood already has a lot of customers around Indonesia. 
 
-##PacFood Business Model
+## PacFood Business Model
+
 - Customer choose restaurant in PacFood application then start to order the food
 - Restaurant will prepare the food 
 - When the food is ready PacDriver will pick up the food and deliver it to customers
