@@ -52,7 +52,7 @@ PacFood is food delivery service in Indonesia which partners with many restauran
 
 ## Mission Statement
 
-Based om the Pacfood business overview and business model that has been described in section "Case Desciprtion", the mission statements of PacFood Delivery are described below:
+Based on the Pacfood business overview and business model that has been described in section "Case Desciprtion", the mission statements of PacFood Delivery are described below:
 
 - To provide a platform that connects restaurants and customers
 - To help restaurants get more customers and revenues
@@ -99,31 +99,50 @@ Finally, there will be ten tables need to be created for PacFood delivery.
 
 After deciding what tables need to be created, in this step fields will be defined for each table. 
 
-| Table Name      | Fields : data type                | Field Description                                                 | Key                 |
-| -------------   | -------------                     | -----------------                                                 |-------------        |
-| **city**        | - city_id   : int                 | Store unique id for each city                                     | Primary Key (PK)    |
-|                 | - name : varchar (225)            | Store restaurant'sname                                            |                     |
-| **restaurant**  | - restaurant_id : int             | Store unique id for each restaurant                               | Primary Key (PK)    |
-|                 | - name : varchar (225)            | Store restaurant name                                             |                     |
-|                 | - email : varchar (225)           | Store email address of restaurant                                 |                     |
-|                 | - phone_number : varchar (20)     | Store phone number of restaurant                                  |                     |
-|                 | - address : text                  | Store information about address of restaurant                     |                     |
-|                 | - city_id : int                   | Store information about city where the restaurant is located      |                     |
-|                 | - coordinate : point              | Store coordinate location of the restaurant                       |                     |
-|                 | - password : varchar (225)        | Store password information of the restaurant's account            |                     |    
-| **food**        | - food_id : int                   | Store unique id for each food                                     | Primary Key (PK)    |
-|                 | - restaurant_id : int             | Store unique id for each restaurant                               |                     |
-|                 | - food_name : varchar (225)       | Store information about the food name                             |                     |
-|                 | - price : numeric                 | Store information about the food's price                          |                     |
-| **user**        | - user_id : int                   | Store unique id for each user                                     | Primary Key (PK)    |
-|                 | - username : varchar (225)        | Store unique username for each user                               |                     |
-|                 | - first_name : varchar (225)      | Store firstname of user                                           |                     |
-|                 | - last_name : varchar (225)       | Store lastname of user                                            |                     |
-|                 | - email : varchar (225)           | Store email address of user                                       |                     |
-|                 | - phone_number : varchar (20)     | Store phone number of user                                        |                     |
-|                 | - address : text                  | Store information about address of user                           |                     |
-|                 | - city_id : int                   | Store information about city where user resided                   |                     |
-|                 | - coordinate : point              | Store coordinate current location of user                         |                     |
-|                 | - password : varchar (225)        | Store password information of user's account                      |                     | 
-
+| Table Name                 | Fields : data type                | Field Description                                                 | Key                 |
+| -------------              | -------------                     | -----------------                                                 |-------------        |
+| **city**                   | - city_id   : int                 | Store unique id for each city                                     | Primary Key (PK)    |
+|                            | - name : varchar (225)            | Store restaurant'sname                                            |                     |
+| **restaurant**             | - restaurant_id : int             | Store unique id for each restaurant                               | Primary Key (PK)    |
+|                            | - name : varchar (225)            | Store restaurant name                                             |                     |
+|                            | - email : varchar (225)           | Store email address of restaurant                                 |                     |
+|                            | - phone_number : varchar (20)     | Store phone number of restaurant                                  |                     |
+|                            | - address : text                  | Store information about address of restaurant                     |                     |
+|                            | - city_id : int                   | Store information about city where the restaurant is located      |                     |
+|                            | - coordinate : point              | Store coordinate location of the restaurant                       |                     |
+|                            | - password : varchar (225)        | Store password information of the restaurant's account            |                     |    
+| **food**                   | - food_id : int                   | Store unique id for each food                                     | Primary Key (PK)    |
+|                            | - restaurant_id : int             | Store unique id for each restaurant                               |                     |
+|                            | - food_name : varchar (225)       | Store information about the food name                             |                     |
+|                            | - price : numeric                 | Store information about the food's price                          |                     |
+| **user**                   | - user_id : int                   | Store unique id for each user                                     | Primary Key (PK)    |
+|                            | - username : varchar (225)        | Store unique username for each user                               |                     |
+|                            | - first_name : varchar (225)      | Store firstname of user                                           |                     |
+|                            | - last_name : varchar (225)       | Store lastname of user                                            |                     |
+|                            | - email : varchar (225)           | Store email address of user                                       |                     |
+|                            | - phone_number : varchar (20)     | Store phone number of user                                        |                     |
+|                            | - address : text                  | Store information about address of user                           |                     |
+|                            | - city_id : int                   | Store information about city where user resided                   |                     |
+|                            | - coordinate : point              | Store coordinate current location of user                         |                     |
+|                            | - password : varchar (225)        | Store password information of user's account                      |                     | 
+| **driver**                 | - driver_id : int                 | Store unique id for each driver                                   | Primary Key (PK)    |
+|                            | - username : varchar (225)        | Store unique username for each driver                             |                     |
+|                            | - first_name : varchar (225)      | Store firstname of driver                                         |                     |
+|                            | - last_name : varchar (225)       | Store lastname of driver                                          |                     |
+|                            | - email : varchar (225)           | Store email address of driver                                     |                     |
+|                            | - phone_number : varchar (20)     | Store phone number of driver                                      |                     |
+|                            | - driver_license : varchar (15)   | Store information about driver's license no.                      |                     |
+|                            | - city_id: int                    | Store information about city where driver resided                 |                     |
+|                            | - license_plat : varchar (20)     | Store information about licene plate no.                          |                     |
+|                            | - password : varchar (225)        | Store password information of driver's account                    |                     |
+| **driver_coordinate**      | - driver_coordinateid : int       | Store unique id for each driver's coordinate                      | Primary Key (PK)    |
+|                            | - driver_id : int                 | Store unique id for each driver                                   |                     |
+|                            | - created_at : timestamp          | date information when the coordinate is created                   |                     |
+|                            | - coordinate: point               | Store information of driver's coordinate pont                     |                     |
+|                            | - email : varchar (225)           | Store email address of driver                                     |                     |
+|                            | - phone_number : varchar (20)     | Store phone number of driver                                      |                     |
+|                            | - driver_license : varchar (15)   | Store information about driver's license no.                      |                     |
+|                            | - city_id: int                    | Store information about city where driver resided                 |                     |
+|                            | - license_plat : varchar (20)     | Store information about licene plate no.                          |                     |
+|                            | - password : varchar (225)        | Store password information of driver's account                    |                     | 
 
