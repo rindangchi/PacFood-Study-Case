@@ -417,11 +417,30 @@ Now all tables already created :
 
 ![image](https://github.com/user-attachments/assets/c0134518-78d6-4aa7-ab0b-8ba4fb39e031)
 
-Based on the requirements two INDEX should be created.
+Based on the requirements two INDEXes should be created.
 
 ### INDEX for table food
 
+```sql
+
+create index idx_food_name
+on food using btree(food_name);
+
+```
+
 ### INDEX for table driver coordinate
+
+```sql
+
+create index idx_driver_coordinate
+on driver_coordinate using gist(coordinate);
+
+```
+
+Two indexes are successfully created:
+
+![image](https://github.com/user-attachments/assets/e8b64fbc-ce93-48f1-b374-0a4bf6244b68)
+
 
 
 
