@@ -158,7 +158,7 @@ After deciding what tables need to be created, in this step fields will be defin
 |                            | - created_at : timestamp          | Store informartion about the date of current status               |                     | 
 
 
-### Identify Relationships Among Tables
+#### Identify Relationships Among Tables
 
 After defining required fields for each table, the next step is to define relationship among the tables, below are the relationship defined for teh tables:
 
