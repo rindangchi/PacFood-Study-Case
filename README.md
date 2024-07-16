@@ -214,7 +214,7 @@ Below is teh ERD design:
 |                            | primary_key is increment                                                     | order_status_log_id type : serial                                           |
 
 
-
+# Create Database in Postgresql
 
 
 
