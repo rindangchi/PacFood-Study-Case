@@ -71,7 +71,7 @@ In this section, table names will be identified based on the business model that
 | Table Name  | Description   |
 | ------------- | ------------- |
 | restaurant| To store detailed information about restaurant that partnered with PacFood | 
-| user | To store detailed information about users who use Pacman service|
+| users | To store detailed information about users who use Pacman service|
 | driver | To store detailed information about driver who partnered with PacFood | 
 
 
@@ -118,7 +118,7 @@ After deciding what tables need to be created, in this step fields will be defin
 |                            | - price : numeric                 | Store information about the food's price                          |                     |
 |                            | - description : text              | Store information about the food's description                    |                     |
 |                            | - availibillity : boolean         | Store information whether food is available or not                |                     |
-| **user**                   | - user_id : int                   | Store unique id for each user                                     | Primary Key (PK)    |
+| **users**                  | - user_id : int                   | Store unique id for each user                                     | Primary Key (PK)    |
 |                            | - username : varchar (225)        | Store unique username for each user                               |                     |
 |                            | - first_name : varchar (225)      | Store firstname of user                                           |                     |
 |                            | - last_name : varchar (225)       | Store lastname of user                                            |                     |
@@ -169,7 +169,7 @@ After defining required fields for each table, the next step is to define relati
 | ----------            | ---------- | ---------- | ---------| ----------        | ----------        | ----------   | ----------   | ----------   | -----------      | --------------   |
 | city                  |            |   1:N      |  1:N     |  1:N              |                   |              |              |              |                  |                  |
 | restaurant            |            |            |          |                   |                   |  1:N         |              |              |                  |                  |
-| user                  |            |            |          |                   |                   |              |              | 1:N          |                  |                  |
+| users                 |            |            |          |                   |                   |              |              | 1:N          |                  |                  |
 | driver                |            |            |          |                   |  1:N              |              |              | 1:N          |                  |                  |
 | driver_coordinate     |            |            |          |                   |                   |              |              |              |                  |                  |
 | food                  |            |            |          |                   |                   |              |              |              |  1:N             |                  |
@@ -201,7 +201,7 @@ Below is teh ERD design:
 |                            | primary key is auto increment                                                | food_id type : serial                                                       |
 |                            | price should be more than 0                                                  | CHECK in field price > 0                                                    |
 |                            | value for default_availibity is TRUE                                         | Availibility DEFAULT TRUE                                                   |
-| **user**                   | information in table user must complete, except last name                    | NOT NULL for below fields: user_id, username, first_name, email, phone, address, city_id, coordinate, password |
+| **users**                  | information in table user must complete, except last name                    | NOT NULL for below fields: user_id, username, first_name, email, phone, address, city_id, coordinate, password |
 |                            | primary key is auto increment                                                | user_id type : Serial                                                       |
 | **driver**                 | information in table driver must complete, except last name                  | NOT NULL for below fields: driver_id, username, first_name,email, phone_number, driver_license, city_id, license_plat, password  |
 |                            | primary key is auto increment                                                | driver_id type : Serial                                                     |
