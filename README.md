@@ -92,6 +92,17 @@ In this section, table names will be identified based on the business model that
 | order_status | To store order status  | 
 | order_status_log | To store order status change| 
 
+Finally, there will be ten tables need to be created for PacFood delivery.
+
+
+#### Identify Fields for Each Table
+
+After deciding what tables need to be created, in this step fields will be defined for each table. 
+
+| Table Name    | Fields : data type      | Primary Key   |
+| ------------- | -------------           | ------------- |
+| city          | - city_id   : int       | city_id       |
+|               | - name : varchar (225)  |               |
 
 
 
