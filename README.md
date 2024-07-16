@@ -11,7 +11,6 @@ PacFood is food delivery service in Indonesia which partners with many restauran
 - When the food is ready PacDriver will pick up the food and deliver it to customers
 - Customers receive their orders and pay the orders via cash
 
-![image](https://github.com/user-attachments/assets/3fc71595-f0a4-4a2a-924a-e31ec5e5fba1)
 
 
 ## Objective 
@@ -189,7 +188,7 @@ After define tables, fields, and relationship among the tables, the next step is
 
 Below is teh ERD design: 
 
-![image](https://github.com/user-attachments/assets/165048cc-8766-4e94-8388-57f89c04c41b)
+![image](https://github.com/user-attachments/assets/3fc71595-f0a4-4a2a-924a-e31ec5e5fba1)
 
 
 ### Business Rules and Constraints
