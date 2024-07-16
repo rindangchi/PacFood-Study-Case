@@ -223,6 +223,47 @@ Below is teh ERD design:
 
 # Create Database in Postgresql
 
+The next step is to create tables in postgresql database. 
+## Tools 
+- Dbeaver
+- Database : postgresql
+- Database name : PacFood
+- Host : localhost: 5432
+
+## Queries
+
+Below are the queries for each table creation: 
+
+### Table : City
+
+```sql
+create table city (
+	city_id integer primary key,
+	name varchar(225) not null unique
+);
+```
+
+### Table : Restaurant
+
+```sql
+
+create table restaurant (
+	restaurant_id SERIAL primary key,
+	name varchar(225) not null,
+	email varchar(225) not null unique,
+	phone_number varchar(20) not null,
+	address text not null, 
+	city_id int not null,
+	coordinate point not null, 
+	password varchar(225) not null,
+
+	constraint fk_restaurant_city
+		foreign key(city_id)
+		references city(city_id)	
+);
+
+```
+
 
 
 
