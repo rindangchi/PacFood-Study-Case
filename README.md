@@ -78,7 +78,7 @@ In this section, table names will be identified based on the business model that
   - Restaurant, user and drivers only domicile in Indonesia --> need a validation table to store data about cities in Indonesia
   - Drivers can update their coordinates --> need a table that can store coordinate logs
   - Each restaurant has at least one menu --> need a table that store menu data
-  - Users enable to place orders from restaurant --> need a table to store order information
+  - Users enable to place orders from nearby restaurant --> need a table to store order information
   - User enable to place several menus in one order, but only from one restaurant --> need a table to store order detail with menu and restaurant information
   - Every status change will be logged in the system --> need a table to store change status log
 
@@ -174,6 +174,12 @@ After defining required fields for each table, the next step is to define relati
 | orders                |            |            |          |                   |                   |              |              |              |  1:N             |  1:N             |
 | order_detail          |            |            |          |                   |                   |              |              |              |                  |                  |
 | order_status_log      |            |            |          |                   |                   |              |              |              |                  |                  |
+
+
+#### Entity Relationship Diagram
+
+After define tables, fields, and relationship among the tables, the next step is to create Entity Relationship Diagram (ERD). In this case ERD is created using lucidchart.
+
 
 
 
