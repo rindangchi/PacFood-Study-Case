@@ -180,6 +180,9 @@ After defining required fields for each table, the next step is to define relati
 
 After define tables, fields, and relationship among the tables, the next step is to create Entity Relationship Diagram (ERD). In this case ERD is created using lucidchart.
 
+Below is teh ERD design: 
+
+![Database ER diagram (crow's foot) - Page 1](https://github.com/user-attachments/assets/2374c44a-e23a-4c04-bd51-365fb4c65abc)
 
 
 
