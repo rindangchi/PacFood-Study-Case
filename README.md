@@ -234,23 +234,23 @@ The next step is to create tables in postgresql database.
 
 Below are the queries for each table creation: 
 
-### Table : City
+### Table : city
 
 ```sql
 create table city (
 	city_id integer primary key,
-	name varchar(225) not null unique
+	name varchar(225) not unique null 
 );
 ```
 
-### Table : Restaurant
+### Table : restaurant
 
 ```sql
 
 create table restaurant (
 	restaurant_id SERIAL primary key,
 	name varchar(225) not null,
-	email varchar(225) not null unique,
+	email varchar(225) not unique null,
 	phone_number varchar(20) not null,
 	address text not null, 
 	city_id int not null,
@@ -264,6 +264,154 @@ create table restaurant (
 
 ```
 
+### Table : food
 
+```sql
+create table food (
+	food_id serial primary key,
+	restaurant_id int not null,
+	food_name varchar(225) not null,
+	price numeric not null check(price> 0),
+	description text not null,
+	availability boolean not null default true,
+	
+	constraint fk_food_restaurant
+		foreign key(restaurant_id)
+		references restaurant(restaurant_id)
+);
+
+```
+
+### Table : users
+
+```sql
+create table users (
+	user_id serial primary key,
+	username varchar(225) unique not null,
+	first_name varchar(225) not null,
+	last_name varchar(225), 
+	email varchar(225) unique not null,
+	phone_number varchar(20) not null,
+	address text not null,
+	city_id int not null,
+	coordinate point not null,
+	password varchar(225) not null,
+
+	constraint fk_user_city
+		foreign key(city_id)
+		references city(city_id)
+);
+
+```
+
+### Table : driver
+
+```sql
+create table driver (
+	driver_id serial primary key,
+	username varchar(225) unique not null,
+	first_name varchar(225) not null,
+	last_name varchar(225), 
+	email varchar(225) unique not null,
+	phone_number varchar(20) not null,
+	driver_license varchar(15) not null,
+	city_id int not null,
+	license_plat varchar(20) not null,
+	password varchar(225) not null,
+
+	constraint fk_driver_city
+		foreign key(city_id)
+		references city(city_id)
+);
+
+```
+
+### Table : driver_coordinate
+
+```sql
+create table driver_coordinate (
+	driver_coordinate_id serial primary key,
+	driver_id int not null,
+	created_at timestamp not null,
+	coordinate point not null,  
+
+	constraint fk_drivercoordinate_driver
+		foreign key(driver_id)
+		references driver(driver_id)
+);
+
+```
+
+### Table : order_status
+
+```sql
+create table order_status (
+	order_status_id serial primary key,
+	status varchar(20) unique not null
+);
+```
+
+### Table : orders
+
+```sql
+
+create table orders (
+	order_id serial primary key,
+	user_id int not null,
+	driver_id int,
+	created_at timestamp not null, 
+	delivery_charge numeric not null check(delivery_charge > 0),
+	review text, 
+	
+	constraint fk_order_user
+		foreign key(user_id)
+		references users(user_id),
+		
+	constraint fk_order_driver
+		foreign key(driver_id)
+		references driver(driver_id)
+);
+
+```
+
+### Table : order_detail
+
+```sql
+create table order_detail (
+	order_detail_id serial primary key,
+	order_id int not null,
+	food_id int not null,
+	qty numeric not null check(qty > 0 ),
+	is_like boolean,
+	
+	constraint fk_orderdetail_order
+		foreign key(order_id)
+		references orders(order_id),
+	
+	constraint fk_orderdetail_food
+		foreign key(food_id)
+		references food(food_id)	
+);
+```
+
+### Table : order_status_log
+
+
+```sql
+create table order_status_log (
+	order_status_log_id serial primary key,
+	order_id int not null,
+	order_status_id int not null,
+	created_at timestamp not null,
+	
+	constraint fk_orderstatlog_order
+		foreign key(order_id)
+		references orders(order_id),
+		
+	constraint fk_orderstatlog_orderstat
+		foreign key(order_status_id)
+		references order_status(order_status_id)
+);
+```
 
 
