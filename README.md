@@ -115,6 +115,8 @@ After deciding what tables need to be created, in this step fields will be defin
 |                            | - restaurant_id : int             | Store unique id for each restaurant                               |                     |
 |                            | - food_name : varchar (225)       | Store information about the food name                             |                     |
 |                            | - price : numeric                 | Store information about the food's price                          |                     |
+|                            | - description : text              | Store information about the food's description                    |                     |
+|                            | - availibillity : boolean         | Store information whether food is available or not                |                     |
 | **user**                   | - user_id : int                   | Store unique id for each user                                     | Primary Key (PK)    |
 |                            | - username : varchar (225)        | Store unique username for each user                               |                     |
 |                            | - first_name : varchar (225)      | Store firstname of user                                           |                     |
