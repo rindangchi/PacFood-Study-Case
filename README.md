@@ -207,5 +207,15 @@ Below is teh ERD design:
 | **orders**                 | information must complete for field: user_id, created_at, deliverry_charge   | NOT NULL for below fields: user_id, created_at, deliverry_char              |
 |                            | value for delivery_charge should more than 0                                 | CHECK in field delivery_charge > 0                                          |
 |                            | primary key is auto increment                                                | order_id type : serial                                                      |
-|                            | value for delivery_charge should more than 0                                 | CHECK in field delivery_charge > 0                                          |
-|                            | value for delivery_charge should more than 0                                 | CHECK in field delivery_charge > 0                                          |
+| **order_detail**           | information in table order_detail mut complete, except field is_like         | NOT NULL for below field: order_detail_id, order_id, food_id, qty           |
+|                            | value for qty should more than 0                                             | CHECK in field qty > 0                                                      |
+|                            | primary_key is auto increment                                                | order_detail_id type : serial                                               |
+| **order_status_log**       | information in table order_status_log must complete                          | NOT NULL for below fields: order_id, order_status_id, created_date          |
+|                            | primary_key is increment                                                     | order_status_log_id type : serial                                           |
+
+
+
+
+
+
+
