@@ -99,10 +99,11 @@ Finally, there will be ten tables need to be created for PacFood delivery.
 
 After deciding what tables need to be created, in this step fields will be defined for each table. 
 
-| Table Name    | Fields : data type      | Primary Key   |
-| ------------- | -------------           | ------------- |
-| city          | - city_id   : int       | city_id       |
-|               | - name : varchar (225)  |               |
+| Table Name    | Fields : data type      | Field Description             | Primary Key   |
+| ------------- | -------------           | -----------------             |-------------  |
+| **city**      | - city_id   : int       | Store unique id for each city | city_id       |
+|               | - name : varchar (225)  |                               |               |
+| 
 
 
 
