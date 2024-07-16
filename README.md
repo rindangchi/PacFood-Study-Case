@@ -414,4 +414,15 @@ create table order_status_log (
 );
 ```
 
+Now all tables already created :
+
+![image](https://github.com/user-attachments/assets/c0134518-78d6-4aa7-ab0b-8ba4fb39e031)
+
+Based on the requirements two INDEX should be created.
+
+### INDEX for table food
+
+### INDEX for table driver coordinate
+
+
 
