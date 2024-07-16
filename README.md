@@ -158,3 +158,26 @@ After deciding what tables need to be created, in this step fields will be defin
 |                            | - created_at : timestamp          | Store informartion about the date of current status               |                     | 
 
 
+### Identify Relationships Among Tables
+
+After defining required fields for each table, the next step is to define relationship among the tables, below are the relationship defined for teh tables:
+
+|                       | city       | resaturant | user     | driver            | driver_coordinate | food         | order_status | orders       | order_detail     | order_status_log |
+|----------             |----------  |----------  |----------|----------         |----------         |----------    |----------    |----------    |-----------       |                  |
+| city                  |            |   1:N      |  1:N     |  1:N              |                   |              |              |              |                  |                  |
+| restaurant            |            |            |          |                   |                   |  1:N         |              |              |                  |                  |
+| user                  |            |            |          |                   |                   |              |              | 1:N          |                  |                  |
+| driver                |            |            |          |                   |  1:N              |              |              | 1:N          |                  |                  |
+| driver_coordinate     |            |            |          |                   |                   |              |              |              |                  |                  |
+| food                  |            |            |          |                   |                   |              |              |              |  1:N             |                  |
+| order_status          |            |            |          |                   |                   |              |              |              |                  |  1:N             |
+| orders                |            |            |          |                   |                   |              |              |              |  1:N             |  1:N             |
+| order_detail          |            |            |          |                   |                   |              |              |              |                  |                  |
+| order_status_log      |            |            |          |                   |                   |              |              |              |                  |                  |
+
+
+
+
+
+
+
