@@ -111,10 +111,10 @@ After deciding what tables need to be created, in this step fields will be defin
 |                 | - city_id : int                   | Store information about city where the restaurant is located      |                     |
 |                 | - coordinate : point              | Store coordinate location of the restaurant                       |                     |
 |                 | - password : varchar (225)        | Store password information of the restaurant's account            |                     |    
-| **food**        |                                   |                                   |               |
-|               |                             |                                   |               |
-|               |                             |                                   |               |
-|               |                             |                                   |               |
+| **food**        | - food_id : int                   | Store unique id for each food                                     |                     |
+|                 | - restaurant_id : int             | Store unique id for each restaurant                               |                     |
+|                 | - food_name : varchar (225)       | Store information about the food name                             |                     |
+|                 | - price : numeric                 | Store information about the food's price                          |                     |
 
 <span style="color:blue">This is a blue text description.</span>
 
