@@ -441,6 +441,10 @@ Two indexes are successfully created:
 
 ![image](https://github.com/user-attachments/assets/e8b64fbc-ce93-48f1-b374-0a4bf6244b68)
 
+### ERD Diagram generated from Dbeaver
+
+![image](https://github.com/user-attachments/assets/46250f3d-9574-4055-a158-a1a01f811774)
+
 
 
 
