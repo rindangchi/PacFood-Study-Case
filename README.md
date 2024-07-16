@@ -111,10 +111,15 @@ After deciding what tables need to be created, in this step fields will be defin
 |                 | - city_id : int                   | Store information about city where the restaurant is located      |                     |
 |                 | - coordinate : point              | Store coordinate location of the restaurant                       |                     |
 |                 | - password : varchar (225)        | Store password information of the restaurant's account            |                     |    
-| **food**        | - food_id : int                   | Store unique id for each food                                     |                     |
+| **food**        | - food_id : int                   | Store unique id for each food                                     | Primary Key (PK)    |
 |                 | - restaurant_id : int             | Store unique id for each restaurant                               |                     |
 |                 | - food_name : varchar (225)       | Store information about the food name                             |                     |
 |                 | - price : numeric                 | Store information about the food's price                          |                     |
+|                 | - availibity : boolean            | Store information whether food is available or not                |                     |
+|                 | - description : text              | Store description of the food                                     |                     |
+|                 | - description : text              | Store description of the food                                     |                     |
+|                 | - description : text              | Store description of the food                                     |                     |
+|                 | - description : text              | Store description of the food                                     |                     |
+|                 | - description : text              | Store description of the food                                     |                     |
 
-<span style="color:blue">This is a blue text description.</span>
 
