@@ -11,7 +11,8 @@ PacFood is food delivery service in Indonesia which partners with many restauran
 - When the food is ready PacDriver will pick up the food and deliver it to customers
 - Customers receive their orders and pay the orders via cash
 
-![image](https://github.com/user-attachments/assets/acb26c75-1378-4b08-9292-ebf2f8bbaf4f)
+![image](https://github.com/user-attachments/assets/3fc71595-f0a4-4a2a-924a-e31ec5e5fba1)
+
 
 ## Objective 
 - Design relational database for PacFood
