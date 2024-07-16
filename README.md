@@ -135,6 +135,10 @@ After deciding what tables need to be created, in this step fields will be defin
 |                            | - city_id: int                    | Store information about city where driver resided                 |                     |
 |                            | - license_plat : varchar (20)     | Store information about licene plate no.                          |                     |
 |                            | - password : varchar (225)        | Store password information of driver's account                    |                     |
+| **driver_coordinate**      | - driver_coordinate_id : int      | Store unique id for each driver                                   | Primary Key (PK)    |
+|                            | - driver_id : int                 | Store unique id for each driver                                   |                     |
+|                            | - created_at : timestamp          | Store information when the coordinate is created                  |                     |
+|                            | - coordinate : point              | Store coordinate information                                      |                     |
 | **order_status**           | - order_status_id : int           | Store unique id for order status                                  | Primary Key (PK)    |
 |                            | - status : varchar (20)           | Store information about status types                              |                     |
 | **orders**                 | - order_id : int                  | Store unique id of each order                                     | Primary Key (PK)    |
@@ -143,6 +147,14 @@ After deciding what tables need to be created, in this step fields will be defin
 |                            | - created_at : timestamp          | Store date information when the order is placed                   |                     |
 |                            | - delivery_charge : numeric       | Store total charge for the order                                  |                     |
 |                            | - review: text                    | Store user's review for the order                                 |                     |
-| **order_detail**           | - license_plat : varchar (20)     | Store information about licene plate no.                          |                     |
-|                            | - password : varchar (225)        | Store password information of driver's account                    |                     | 
+| **order_detail**           | - order_detail_id : int           | Store unique id of ecah order                                     |                     |
+|                            | - order_id : varchar (225)        | Store unique id of each order related an order detail             |                     | 
+|                            | - food_id : varchar (225)         | Store unique id of food related to order detail                   |                     | 
+|                            | - qty : varchar (225)             | Store qty of food that ordered by user                            |                     | 
+|                            | - is_like : varchar (225)         | Store information whether user like/dislike the food being ordered|                     |
+| **order_status_log**       | - order_status_log_id : int       | Store unique id of ecah order status log                          | Primary Key (PK)    |
+|                            | - order_id : int                  | Store unique id of each order related to status log               |                     | 
+|                            | - order_status_id : int           | Store status type related to order status log                     |                     | 
+|                            | - created_at : timestamp          | Store informartion about the date of current status               |                     | 
+
 
