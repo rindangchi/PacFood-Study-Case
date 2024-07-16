@@ -115,11 +115,15 @@ After deciding what tables need to be created, in this step fields will be defin
 |                 | - restaurant_id : int             | Store unique id for each restaurant                               |                     |
 |                 | - food_name : varchar (225)       | Store information about the food name                             |                     |
 |                 | - price : numeric                 | Store information about the food's price                          |                     |
-|                 | - availibity : boolean            | Store information whether food is available or not                |                     |
-|                 | - description : text              | Store description of the food                                     |                     |
-|                 | - description : text              | Store description of the food                                     |                     |
-|                 | - description : text              | Store description of the food                                     |                     |
-|                 | - description : text              | Store description of the food                                     |                     |
-|                 | - description : text              | Store description of the food                                     |                     |
+| **user**        | - user_id : int                   | Store unique id for each user                                     | Primary Key (PK)    |
+|                 | - username : varchar (225)        | Store unique username for each user                               |                     |
+|                 | - first_name : varchar (225)      | Store firstname of user                                           |                     |
+|                 | - last_name : varchar (225)       | Store lastname of user                                            |                     |
+|                 | - email : varchar (225)           | Store email address of user                                       |                     |
+|                 | - phone_number : varchar (20)     | Store phone number of user                                        |                     |
+|                 | - address : text                  | Store information about address of user                           |                     |
+|                 | - city_id : int                   | Store information about city where user resided                   |                     |
+|                 | - coordinate : point              | Store coordinate current location of user                         |                     |
+|                 | - password : varchar (225)        | Store password information of user's account                      |                     | 
 
 
