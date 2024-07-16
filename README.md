@@ -188,21 +188,24 @@ Below is teh ERD design:
 ### Business Rules and Constraints
 
 
-| Table Name                 | Business Rules                                                         | Constraints                                                                   |
-| -------------              | -------------                                                          | -----------------                                                             |
-| **city**                   | primary key is not auto increment                                      |                                                                               |
-| **order_status**           | primary key is auto increment                                          | order_status_id type : serial                                                 |
-| **restaurant**             | information in table restaurant must complete                          | NOT NULL for below fields: name, email, phone_number, address, city_id, coordinate, password                                                  |
-|                            | primary key is auto increment                                          | restaurant_id type : serial                                                 |
-| **food**                   | information in table foods must complete, except description           | NOL NULL for below fields: restaurant_id, food_name, price, description, availibity                                                    |      
-|                            | primary key is auto increment                                          | food_id type : serial                                                       |
-|                            | price should be more than 0                                            | CHECK in field price >= 0                                                   |
-|                            | Value for default_availibity is TRUE                                   | Availibility DEFAULT TRUE                                                   |
-| **user**                   | information in table user must complete, except last name              | NOT NULL for below fields: username, first_name, email, phone, address, city_id, coordinate, password                                          |
-|                            | primary key is auto increment                                          | user_id type : Serial                                                       |
-|                            | - primary key is auto increment                                        |                                                                               |
-|                            | - primary key is auto increment                                        |                                                                               |
-|                            | - primary key is auto increment                                        |                                                                               |
-|                            | - primary key is auto increment                                        |                                                                               |
-|                            | - primary key is auto increment                                        |                                                                               |
-|                            | - primary key is auto increment                                        |                                                                               |
+| Table Name                 | Business Rules                                                               | Constraints                                                                 |
+| -------------              | -------------                                                                | -----------------                                                           |
+| **city**                   | primary key is not auto increment                                            |                                                                             |
+| **order_status**           | primary key is auto increment                                                | order_status_id type : serial                                               |
+| **restaurant**             | information in table restaurant must complete                                | NOT NULL for below fields: name, email, phone_number, address, city_id, coordinate, password                   |
+|                            | primary key is auto increment                                                | restaurant_id type : serial                                                 |
+| **food**                   | information in table foods must complete, except description                 | NOL NULL for below fields: restaurant_id, food_name, price, description, availibity                            |     
+|                            | primary key is auto increment                                                | food_id type : serial                                                       |
+|                            | price should be more than 0                                                  | CHECK in field price > 0                                                    |
+|                            | value for default_availibity is TRUE                                         | Availibility DEFAULT TRUE                                                   |
+| **user**                   | information in table user must complete, except last name                    | NOT NULL for below fields: user_id, username, first_name, email, phone, address, city_id, coordinate, password |
+|                            | primary key is auto increment                                                | user_id type : Serial                                                       |
+| **driver**                 | information in table driver must complete, except last name                  | NOT NULL for below fields: driver_id, username, first_name,email, phone_number, driver_license, city_id, license_plat, password  |
+|                            | primary key is auto increment                                                | driver_id type : Serial                                                     |
+| **driver_coordinate**      | information in table driver_coordinate must complete                         | NOT NULL for below fields: driver_id, created_at, coordinate                |
+|                            | primary key is auto increment                                                | driver_coordinate_id type : serial                                          |
+| **orders**                 | information must complete for field: user_id, created_at, deliverry_charge   | NOT NULL for below fields: user_id, created_at, deliverry_char              |
+|                            | value for delivery_charge should more than 0                                 | CHECK in field delivery_charge > 0                                          |
+|                            | primary key is auto increment                                                | order_id type : serial                                                      |
+|                            | value for delivery_charge should more than 0                                 | CHECK in field delivery_charge > 0                                          |
+|                            | value for delivery_charge should more than 0                                 | CHECK in field delivery_charge > 0                                          |
