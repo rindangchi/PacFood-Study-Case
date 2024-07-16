@@ -95,6 +95,10 @@ In this section, table names will be identified based on the business model that
 
 Finally, there will be ten tables need to be created for PacFood delivery.
 
+Besides the ten tables that already mentioned, we also required to create INDEX, the requirements are stated as below :
+
+- Create Index for table Food field food_name because user is mainly searching by food name
+- Create Index for table driver_coordinate field coordinate, the purpose is to search the nearest driver from the user's location
 
 #### Identify Fields for Each Table
 
