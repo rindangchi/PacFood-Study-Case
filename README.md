@@ -182,7 +182,7 @@ After define tables, fields, and relationship among the tables, the next step is
 
 Below is teh ERD design: 
 
-![Database ER diagram (crow's foot) - Page 1](https://github.com/user-attachments/assets/2374c44a-e23a-4c04-bd51-365fb4c65abc)
+![image](https://github.com/user-attachments/assets/165048cc-8766-4e94-8388-57f89c04c41b)
 
 
 
