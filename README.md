@@ -192,16 +192,13 @@ Below is teh ERD design:
 | -------------              | -------------                                                          | -----------------                                                             |
 | **city**                   | primary key is not auto increment                                      |                                                                               |
 | **order_status**           | primary key is auto increment                                          | order_status_id type : serial                                                 |
-| **restaurant**             | - information in table restaurant must complete                        | - NOT NULL for below fields:                                                  |
-|                            |                                                                        |   name, email, phone_number, address, city_id, coordinate, password           |
+| **restaurant**             | - information in table restaurant must complete                        | - NOT NULL for below fields: name, email, phone_number, address, city_id, coordinate, password                                                  |
 |                            | - primary key is auto increment                                        | - restaurant_id type : serial                                                 |
-| **food**                   | - information in table foods must complete, except description         | - NOL NULL for below fields:                                                  |      
-|                            |                                                                        |   restaurant_id, food_name, price, description, availibity                    |
+| **food**                   | - information in table foods must complete, except description         | - NOL NULL for below fields: restaurant_id, food_name, price, description, availibity                                                    |      
 |                            | - primary key is auto increment                                        | - food_id type : serial                                                       |
 |                            | - price should be more than 0                                          | - CHECK in field price >= 0                                                   |
 |                            | - Value for default_availibity is TRUE                                 | - Availibility DEFAULT TRUE                                                   |
-| **user**                   | - information in table user must complete, except last name            | - NOT NULL for below fields:                                                  |
-|                            |                                                                        |   username, first_name, email, phone, address, city_id, coordinate, password  |
+| **user**                   | - information in table user must complete, except last name            | - NOT NULL for below fields: username, first_name, email, phone, address, city_id, coordinate, password                                          |
 |                            | - primary key is auto increment                                        | - user_id type : Serial                                                       |
 |                            | - primary key is auto increment                                        |                                                                               |
 |                            | - primary key is auto increment                                        |                                                                               |
