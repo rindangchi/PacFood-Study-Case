@@ -662,3 +662,211 @@ def order_table(n_data, user_table, driver_table, review_table, is_print):
 
   return table
 ```
+
+```python
+order_table = order_table(100, user_table = user_table, 
+                          driver_table=driver_table, 
+                          review_table=review_table, 
+                          is_print= True)
+```
+
+### Create Dummy Data : Table order_detail
+
+Table order_detail has relation with table food and orders So that we need to extract table food.
+
+```python
+# extract tabel food 
+food_table = csv_to_dict("/content/drive/MyDrive/Pacmann-PacFood study case/food.csv")
+```
+
+```python
+#show data
+show_data(food_table)
+```
+
+```python
+"""
+function to create dummy data for order detail table.
+headers:
+
+- order_detail_id
+- order_id
+- food_id
+- qty
+
+arguments:
+- n_data (int) : number of data that want to be created
+- order_table (list) : list of dictionary order data
+- food_table (list) : list of dictionary food data
+- is_print (bool) : if true then will show the data
+
+"""
+def order_detail_table(n_data, order_table, food_table, is_print):
+  #create table
+  table = {}
+
+  table["order_detail_id"] = [i + 1 for i in range(n_data)]
+  table["order_id"] = [random.choice(order_table["order_id"]) for i in range(n_data)]
+  table["food_id"] = [random.choice(food_table["food_id"]) for i in range(n_data)]
+  table["delivery_charge"] = [FAKER.random_int(1, 15, 1) for i in range(n_data)]
+  table["is_like"] = [FAKER.boolean(chance_of_getting_true=85) for i in range(n_data)]
+
+  #print table
+
+  if is_print:
+    show_data(table)
+
+  return table
+```
+
+```python
+order_detail_table = order_detail_table(150, order_table = order_table, 
+                          food_table=food_table, 
+                          is_print= True)
+```
+
+### Create Dummy Data: order_status_log
+
+Able order_status_log has relationship with table order and order_status.
+
+```python
+#extract table order_status
+order_status_table = csv_to_dict("/content/drive/MyDrive/Pacmann-PacFood study case/order_status.csv")
+```
+
+```python
+show_data(order_status_table)
+```
+
+```python
+#create function generate status
+
+"""
+function generate status used to generate order_status_id randomly in table order_status_log
+This function will create status id based on below rules:
+- Each order with delivered status (id = 4) should also have status Confirmed (1), Processed (2), and Delivering (3). These status should be in a sqquence order form 1-2-3-4
+- Function will assign order status Cancelled (5) for order with order_ids that multiples of 10
+
+arguments:
+
+order_table(list) : list of order
+
+return :
+list_status (list) : combination of id and status
+
+"""
+def generate_status(order_table):
+
+    list_status = list()
+
+    for i in order_table['order_id']:
+      if(i%10 != 0) :
+        for j in order_status_table['order_status_id'][:-1]:
+          order_id = i
+          status = j
+          start_date = order_table['created_at'][i-1] + timedelta(hours=int(j))
+          end_date = order_table['created_at'][i-1] + timedelta(hours=int(j)+1)
+          created_at = FAKER.date_time_between(start_date, end_date)
+          data = (f'{order_id} {status} {created_at}')
+          list_status.append(data)
+      else:
+        order_id = i
+        status = 5
+        created_at = order_table['created_at'][i-1] + timedelta(minutes = 10)
+        data = (f'{order_id} {status} {created_at}')
+        list_status.append(data)
+    return list_status   
+
+```
+
+```python
+# function to create dummy data for order_status_log table.
+
+"""
+function to create dummy data for order_status_log table.
+headers:
+- order_status_log_id
+- order_id
+- order_status_id
+- created_at
+arguments:
+
+- order_table (list) : list of dictionary order data
+- order_status_table (list) : list of dictionary food data
+- is_print (bool) : if true then will show the data
+"""
+
+def order_status_log_table(order_table, order_status_table, is_print):
+
+  #create table
+  table = {}
+  list_status = generate_status(order_table)
+  table["order_status_log_id"] = [i + 1 for i in range(len(list_status))]
+  table["order_id"] = [i.split(' ')[0] for i in list_status]
+  table["order_status_id"] = [i.split(' ')[1] for i in list_status]
+  table["created_at"] = [f"{i.split(' ')[2]} {i.split(' ')[3]}" for i in list_status]
+
+  #print table
+
+  if is_print:
+    show_data(table)
+
+  return table
+```
+
+```python
+order_status_log_table = order_status_log_table(order_table = order_table, 
+                          order_status_table=order_status_table, 
+                          is_print= True)
+```
+
+### Save Data in .csv format
+
+```python
+"""
+function to generate dummy data into csv. 
+arguments:
+
+- data (list) : lit of dictionary data that will be save as csv file
+- filename (string) : name for the csv file
+
+return:
+None 
+"""
+
+def save_to_csv(data, filename):
+
+  #create csv file 
+  with open(file = f"{filename}.csv", mode = "w", newline = "") as file:
+
+    #create csv writer
+    writer = csv.writer(file)
+
+    #write header csv
+    writer.writerow(list(data.keys()))
+
+    #display length of data
+    len_data = len(list(data.items())[0][1])
+
+    #write data to csv file
+    for i in range(len_data):
+      row = []
+      for key in data.keys():
+        row.append(data[key][i])
+      writer.writerow(row)
+```
+
+```python
+#save data driver_coordinate to csv
+save_to_csv(data = driver_coordinate_table, filename="driver_coordinate")
+
+#save data order to csv
+save_to_csv(data = order_table, filename="orders")
+
+#save data order_detail to csv
+save_to_csv(data = order_detail_table, filename="order_detail")
+
+#save data order_status_log to csv
+save_to_csv(data = order_status_log_table, filename="order_status_log")
+
+```
