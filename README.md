@@ -1,3 +1,6 @@
+# Introduction
+This project is part of Pacmann Relational Database Class Week 8. 
+
 # Case Description
 
 ## PacFood Business Overview
@@ -445,6 +448,33 @@ Two indexes are successfully created:
 
 ![image](https://github.com/user-attachments/assets/46250f3d-9574-4055-a158-a1a01f811774)
 
+
+# Create Dummy data for the table
+The next step is to insert some data to the table.
+
+## Install and Import Required Libraries
+
+```python
+# install library faker
+
+!pip install Faker
+!pip install tabulate
+```
+
+```python
+# import required library
+
+from faker import Faker
+from tabulate import tabulate
+import random
+from datetime import datetime, timedelta
+import csv
+```
+
+```python
+#localization that we will use faker in format ID (indonesia)
+FAKER = Faker("id_ID")
+```
 
 
 
