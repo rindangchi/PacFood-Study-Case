@@ -476,7 +476,7 @@ import csv
 FAKER = Faker("id_ID")
 ```
 
-## Create Dummy Tables
+## Create Dummy Data
 Data for below tables will be generated randomnly. The rest data for other tables is already provided by Pacmann.
 
 - driver coordinate
@@ -537,4 +537,128 @@ driver_table = csv_to_dict("/content/drive/MyDrive/Pacmann-PacFood study case/dr
 show_data(driver_table)
 ```
 
+```python
 
+"""
+function to create dummy data for driver_coordinate table, with below headers:
+
+- driver_id
+- driver_coordinate_id
+- created_at
+- coordinate
+
+arguments:
+
+- n_data (int) : numbers of coordinates that want to be created
+- driver_table (list) : list dictionary of driver data
+- is_print (boolean) : if true then will show the result
+
+return:
+
+- table (list)
+
+"""
+
+def driver_coordinate_table(n_data, driver_table, is_print):
+
+  #define start date
+  start_date = datetime(2022, 1, 1)
+
+  #define end date
+  end_date = datetime(2023, 12, 31, 23, 59, 59)
+
+  #create table
+  table = {}
+
+  table["driver_coordinate_id"] = [i + 1 for i in range(n_data)]
+  table["driver_id"] = [random.choice(driver_table["driver_id"]) for i in range(n_data)]
+  table["created_at"] = [FAKER.date_time_between(start_date = start_date, end_date = end_date) for i in range(n_data)]
+  lat_log = [FAKER.local_latlng(country_code = "ID", coords_only = True) for i in range(n_data)]
+  table["coordinate"] = [(f'{lat_log[i][0]}, {lat_log[i][1]}') for i in range(n_data)]
+
+  #print table
+
+  if is_print:
+    show_data(table)
+
+  return table
+```
+
+
+```python
+#create driver_coordinate table for 100 datas
+
+driver_coordinate_table = driver_coordinate_table(100, driver_table, is_print= True)
+```
+
+### Create Dummy Data : Table order
+
+Table orders has relationship with table users and table driver. Previously we have extract table driver, now we will extract table user.
+
+```python
+#extract table user
+user_table = csv_to_dict("/content/drive/MyDrive/Pacmann-PacFood study case/user_data.csv")
+```
+
+```python
+show_data(user_table)
+```
+
+Besides user and driver data, there will also field review in our ERD design for table orders. For review we will take it randomly for table review.csv.
+
+```python
+#extract review table
+review_table = csv_to_dict("/content/drive/MyDrive/Pacmann-PacFood study case/review.csv")
+```
+
+```python
+#show review data
+show_data(review_table)
+```
+
+```python
+"""
+function to create dummy data for order table.
+headers:
+
+- order_id
+- user_id
+- driver_id
+- created_at
+- delivery_charge
+- review 
+
+arguments:
+- n_data (int) : number of data that want to be created
+- user_table (list) : list of dictionary data user
+- driver_table (list) : list of dictionary data driver
+- is_print (bool) : if true then will show the data
+- review (text) : review for ecah order
+
+"""
+
+def order_table(n_data, user_table, driver_table, review_table, is_print):
+
+  #define start date
+  start_date = datetime(2022, 1, 1)
+
+  #define end date
+  end_date = datetime(2023, 12, 31, 23, 59, 59)
+
+  #create table
+  table = {}
+
+  table["order_id"] = [i + 1 for i in range(n_data)]
+  table["user_id"] = [random.choice(user_table["user_id"]) for i in range(n_data)]
+  table["driver_id"] = [random.choice(driver_table["driver_id"]) for i in range(n_data)]
+  table["created_at"] = [FAKER.date_time_between(start_date = start_date, end_date = end_date) for i in range(n_data)]
+  table["delivery_charge"] = [FAKER.random_int(5_000, 25_000, 1_500) for i in range(n_data)]
+  table["review"] = [random.choice(review_table["Review"]) for i in range(n_data)]
+
+  #print table
+
+  if is_print:
+    show_data(table)
+
+  return table
+```
