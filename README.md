@@ -870,3 +870,59 @@ save_to_csv(data = order_detail_table, filename="order_detail")
 save_to_csv(data = order_status_log_table, filename="order_status_log")
 
 ```
+
+# Copy Dummy Data to Database
+
+The lat step is to copy the dummy data to the real tables in the database. 
+
+```sql
+copy city
+from '/Users/rindangcahyaning/Documents/Bootcamp/Pacmann DE - Build RDBMS/pacfood/city.csv'
+csv 
+header;
+
+copy restaurant
+from '/Users/rindangcahyaning/Documents/Bootcamp/Pacmann DE - Build RDBMS/pacfood/restaurant.csv'
+csv
+header;
+
+copy food
+from '/Users/rindangcahyaning/Documents/Bootcamp/Pacmann DE - Build RDBMS/pacfood/food.csv'
+csv
+header;
+
+copy users
+from '/Users/rindangcahyaning/Documents/Bootcamp/Pacmann DE - Build RDBMS/pacfood/user_data.csv'
+csv
+header;
+
+copy driver
+from '/Users/rindangcahyaning/Documents/Bootcamp/Pacmann DE - Build RDBMS/pacfood/driver.csv'
+csv
+header;
+
+copy driver_coordinate
+from '/Users/rindangcahyaning/Documents/Bootcamp/Pacmann DE - Build RDBMS/pacfood/driver_coordinate.csv'
+csv
+header;
+
+copy order_status
+from '/Users/rindangcahyaning/Documents/Bootcamp/Pacmann DE - Build RDBMS/pacfood/order_status.csv'
+csv 
+header;
+
+copy orders
+from '/Users/rindangcahyaning/Documents/Bootcamp/Pacmann DE - Build RDBMS/pacfood/orders.csv'
+csv 
+header;
+
+copy order_detail
+from '/Users/rindangcahyaning/Documents/Bootcamp/Pacmann DE - Build RDBMS/pacfood/order_detail.csv'
+csv 
+header;
+
+copy order_status_log
+from '/Users/rindangcahyaning/Documents/Bootcamp/Pacmann DE - Build RDBMS/pacfood/order_status_log.csv'
+csv 
+header;
+```
