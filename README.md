@@ -154,10 +154,10 @@ After deciding what tables need to be created, in this step fields will be defin
 |                            | - delivery_charge : numeric       | Store total charge for the order                                  |                     |
 |                            | - review: text                    | Store user's review for the order                                 |                     |
 | **order_detail**           | - order_detail_id : int           | Store unique id of ecah order                                     |                     |
-|                            | - order_id : varchar (225)        | Store unique id of each order related an order detail             |                     | 
-|                            | - food_id : varchar (225)         | Store unique id of food related to order detail                   |                     | 
-|                            | - qty : varchar (225)             | Store qty of food that ordered by user                            |                     | 
-|                            | - is_like : varchar (225)         | Store information whether user like/dislike the food being ordered|                     |
+|                            | - order_id : int       		 | Store unique id of each order related an order detail             |                     | 
+|                            | - food_id : int         		 | Store unique id of food related to order detail                   |                     | 
+|                            | - qty : numeric	                 | Store qty of food that ordered by user                            |                     | 
+|                            | - is_like : boolean	         | Store information whether user like/dislike the food being ordered|                     |
 | **order_status_log**       | - order_status_log_id : int       | Store unique id of ecah order status log                          | Primary Key (PK)    |
 |                            | - order_id : int                  | Store unique id of each order related to status log               |                     | 
 |                            | - order_status_id : int           | Store status type related to order status log                     |                     | 
