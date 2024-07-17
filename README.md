@@ -476,5 +476,65 @@ import csv
 FAKER = Faker("id_ID")
 ```
 
+## Create Dummy Tables
+Data for below tables will be generated randomnly. The rest data for other tables is already provided by Pacmann.
+
+- driver coordinate
+- order
+- order_detail
+-order_status_log
+
+### Create function to show data and extract csv file into tabular view
+
+```python
+#function to show data 
+def show_data(table):
+  tab = tabulate(tabular_data = table,
+                 headers = table.keys(),
+                 tablefmt="psql",
+                 numalign="center")
+  
+  print(tab)
+```
+
+```python
+#function to extract file .csv to dictionary 
+def csv_to_dict(filename):
+
+  #open csv file 
+
+  with open(f'{filename}', mode = 'r', encoding = 'utf-8-sig') as file :
+    csv_reader = csv.DictReader(file)
+
+    #save data in dictionary format
+
+    data = {}
+
+    for row in csv_reader:
+      for key, value in row.items():
+
+        #set_default used to add key to the result dict
+        #value from key, at first added with empty list 
+        #empty list filled with method append for each row
+
+        data.setdefault(key, []).append(value)
+  return data 
+```
+
+### Create Dummy Data : Table driver_coordinate
+
+Table driver_coordinate has relationship with table driver, so we need to extract table driver.
+
+```python
+#open table driver 
+
+driver_table = csv_to_dict("/content/drive/MyDrive/Pacmann-PacFood study case/driver.csv")
+```
+
+```python
+#show table driver
+
+show_data(driver_table)
+```
 
 
