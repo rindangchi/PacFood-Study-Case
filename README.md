@@ -951,7 +951,7 @@ Result
 ![image](https://github.com/user-attachments/assets/8ca772da-a24e-4682-ac05-adcf1e9e0928)
 
 
-3. Display all restaurants that have menu : Ayam, Bebek , Mie. Display restaurant names and menus.
+2. Display all restaurants that have menu : Ayam, Bebek , Mie. Display restaurant names and menus.
 
 ```sql
 select r.name, f.food_name
@@ -968,7 +968,7 @@ Result
 ![image](https://github.com/user-attachments/assets/a119f1aa-fee7-478f-a5f0-1e7e29283170)
 
    
-5. Display 3 nearest restaurant for user with user_id : 24, display the restaurant names and the distances
+3. Display 3 nearest restaurant for user with user_id : 24, display the restaurant names and the distances
 
 Using postgis module from postgresql. At first, need to download and install postgis first. Many documentation out there that can be used as reference.
 
@@ -1007,10 +1007,26 @@ Result:
 ![image](https://github.com/user-attachments/assets/b9c0e995-671e-4fde-939d-4526e9660e31)
 
 
-7. Ranking popularity of reataurants based on number of orders. Display restaurant names and teh total order.
+4. Ranking popularity of reataurants based on number of orders. Display restaurant names and teh total order.
 
+```sql
+select r.name, count(o.order_id) as total_order,
+dense_rank () OVER (ORDER BY count(o.order_id) DESC) ranking
+from restaurant r 
+join food f
+on r.restaurant_id = f.restaurant_id 
+join order_detail od 
+on od.food_id = f.food_id 
+join orders o
+on o.order_id = od.order_id 
+group by r.name
+order by total_order desc;
 
+```
 
+Result:
+
+![image](https://github.com/user-attachments/assets/a63f2a6e-bbea-4c88-b346-84fe955984ee)
 
    
 
