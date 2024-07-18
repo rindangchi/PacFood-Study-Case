@@ -926,3 +926,51 @@ from '/Users/rindangcahyaning/Documents/Bootcamp/Pacmann DE - Build RDBMS/pacfoo
 csv 
 header;
 ```
+
+# Retrive Data based on Business Question
+
+After successfully inserting data to the tables, analysis by using SQL queries are performed to answer saveral business questions.
+
+1. Retrive review data that the reviews are containing negative words, such as disappointed, bad, or sucks. Display the resaurant name and the reviews.
+
+```sql
+select r.name , o.review 
+from orders o 
+join order_detail od 
+on o.order_id = od.order_id 
+join food f 
+on f.food_id  = od.food_id 
+join restaurant r 
+on r.restaurant_id = f.restaurant_id 
+where review ilike '%sucks%' or review ilike '%Bad%' or review ilike '%disappointed%'
+
+```
+
+Result
+
+![image](https://github.com/user-attachments/assets/8ca772da-a24e-4682-ac05-adcf1e9e0928)
+
+
+3. Display all restaurants that have menu : Ayam, Bebek , Mie. Display restaurant names and menus.
+
+```sql
+select r.name, f.food_name
+from food f 
+join restaurant r 
+on f.restaurant_id = r.restaurant_id 
+where f.food_name ilike '%Bebek%' 
+or f.food_name ilike '%mie%' 
+or f.food_name ilike '%ayam%'
+```
+
+Result
+
+![image](https://github.com/user-attachments/assets/a119f1aa-fee7-478f-a5f0-1e7e29283170)
+
+   
+5. Diplay 3 nearest restaurant for user with user_id : 24, display the restaurant names and the distances
+6. Ranking popularity of reataurants based on number of orders. Display restaurant names and teh total order.
+
+
+   
+7. 
