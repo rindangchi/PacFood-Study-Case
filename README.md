@@ -968,9 +968,49 @@ Result
 ![image](https://github.com/user-attachments/assets/a119f1aa-fee7-478f-a5f0-1e7e29283170)
 
    
-5. Diplay 3 nearest restaurant for user with user_id : 24, display the restaurant names and the distances
-6. Ranking popularity of reataurants based on number of orders. Display restaurant names and teh total order.
+5. Display 3 nearest restaurant for user with user_id : 24, display the restaurant names and the distances
+
+Using postgis module from postgresql. At first, need to download and install postgis first. Many documentation out there that can be used as reference.
+
+```sql
+with user_coordinate as (
+select st_setsrid(st_makepoint(coordinate[0], coordinate[1]), 4326)::geometry(point, 4326) as coordinate
+from users u
+where user_id = 24
+),
+resto_coordinate as (
+select name, address, st_setsrid(st_makepoint(coordinate[0], coordinate[1]), 4326)::geometry(point, 4326) as coordinate
+from restaurant r 
+)
+select name, address, distance_meter from 
+(
+
+select name, address, r.coordinate as rc,
+	   u.coordinate as uc,
+	   st_distance(
+	   r.coordinate::geography, 
+	   u.coordinate::geography
+	   )
+	   as distance_meter
+	  
+from resto_coordinate r
+cross join user_coordinate u ) a
+
+order by distance_meter asc 
+
+limit 3;
+
+```
+
+Result:
+
+![image](https://github.com/user-attachments/assets/b9c0e995-671e-4fde-939d-4526e9660e31)
+
+
+7. Ranking popularity of reataurants based on number of orders. Display restaurant names and teh total order.
+
+
 
 
    
-7. 
+
